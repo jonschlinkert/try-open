@@ -11,6 +11,9 @@ var fs = require('fs');
 
 module.exports = function(filepath, flags, mode) {
   try {
+    if (typeof flags === 'undefined') {
+      flags = 'r';
+    }
     return fs.openSync(filepath, flags, mode);
   } catch (err) {
     if (err.code === 'ENOENT') {

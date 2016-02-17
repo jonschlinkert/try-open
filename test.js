@@ -11,12 +11,17 @@ describe('open', function() {
   });
 
   it('should open a file', function() {
-    assert(typeof tryOpen('package.json', 'r') === 'number');
-    assert(typeof tryOpen('fixtures/a.txt', 'r') === 'number');
+    assert.equal(typeof tryOpen('package.json', 'r'), 'number');
+    assert.equal(typeof tryOpen('fixtures/a.txt', 'r'), 'number');
   });
 
-  it('should open a file', function() {
+  it('should return false if a file does not exist when a flag is passed', function() {
     var fd = tryOpen('foo.bar', 'r');
-    assert(fd === false);
+    assert.equal(fd, false);
+  });
+
+  it('should return false if a file does not exist when no flags are passed', function() {
+    var fd = tryOpen('foo.bar');
+    assert.equal(fd, false);
   });
 });
