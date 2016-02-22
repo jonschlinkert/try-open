@@ -10,6 +10,8 @@
 var fs = require('fs');
 
 module.exports = function(filepath, flags, mode) {
+  if (!filepath) return false;
+
   try {
     if (typeof flags === 'undefined') {
       flags = 'r';
