@@ -23,6 +23,10 @@
     "gulp-format-md": "^0.1.7",
     "mocha": "*"
   },
+  "keywords": [
+    "open",
+    "try"
+  ],
   "verb": {
     "toc": false,
     "layout": "default",
